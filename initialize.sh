@@ -1,14 +1,16 @@
 echo "Empty application template for Android project"
 
 echo "Enter new project name: "
-name=`read`
+read name
 
 echo "Replacing placeholder name with \"$name\""
-sed s/emptyApp/$name app/build.gradle app/src/main/AndroidManifest.xml app/src/main/values/strings.xml
+sed -i s/emptyApp/$name/ app/build.gradle app/src/main/AndroidManifest.xml app/src/main/res/values/strings.xml
 
-echo "Removing .git and README.md"
-rm -r .git
+echo "Removing .git, README.md and initialize.sh"
+rm -rf .git
 rm README.md
 rm initialize.sh
 
-echo "Done."
+echo "Done. Press enter to close..."
+
+read
