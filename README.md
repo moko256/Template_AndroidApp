@@ -1,6 +1,6 @@
 ﻿# About
 
-Empty application template for Android project
+Empty application template for Android project for me.
 
 # Usage
 
