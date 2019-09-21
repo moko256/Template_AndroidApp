@@ -1,4 +1,4 @@
-﻿# About
+# About
 
 Empty application template for Android project for me.
 
@@ -10,7 +10,8 @@ Empty application template for Android project for me.
 ## initialize.sh's doing:
 
 1. Replace placeholder name "emptyApp" in this project
-2. Remove .git, README.md and initialize.sh
+2. Create folder for java files.
+3. Remove .git, README.md and initialize.sh
 
 # License
 [CC0](https://creativecommons.org/choose/zero/)
