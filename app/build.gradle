@@ -5,15 +5,16 @@ apply plugin: 'kotlin-android'
 //apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 29
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
         applicationId "com.github.moko256.emptyApp"
         minSdkVersion 28
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        resConfig 'en'
     }
     buildTypes {
         release {
@@ -25,14 +26,33 @@ android {
         targetCompatibility = "8"
         sourceCompatibility = "8"
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs += '-progressive'
+//        freeCompilerArgs += '-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi'
+    }
 
     packagingOptions {
+        exclude '/DebugProbesKt.bin'
         exclude '/javax/**'
         exclude '/okhttp3/**'
         exclude '/kotlin/**'
         exclude '/META-INF/*.version'
         exclude '/META-INF/**.kotlin_module'
         exclude '/META-INF/proguard/**'
+    }
+    
+    buildFeatures {
+        viewBinding = false
+        aidl = false
+        renderScript = false
+        resValues = false
+        shaders = false
+    }
+
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
     }
 }
 
